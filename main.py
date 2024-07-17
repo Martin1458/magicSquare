@@ -13,8 +13,8 @@ print_square(square_array)
 def validate_square(square):
     valid = 0 # 0 = True
     correct_sum = 120 #! Hardcoded for now
-    for row_num in range(square):
-        if not validate_row(square, row, correct_sum):
+    for row_num in range(len(square)):
+        if not validate_row(square, row_num, correct_sum):
             valid += 1
     return valid == 0
 
@@ -27,7 +27,7 @@ def validate_row(square, row, correct_sum):
         print("Row", row, "is correct")
         return True
     else: 
-        print("Row", row, "is incorrect: ", row_sum, "!= ", correct_sum)
+        print("Row", row, "is incorrect: ", row_sum, " != ", correct_sum)
         return False
 
 validate_square(square_array)
